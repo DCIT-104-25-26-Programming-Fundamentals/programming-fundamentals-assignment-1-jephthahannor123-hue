@@ -109,27 +109,31 @@ def delete_task(tasks):
         print("Invalid task number.")
 
 
-tasks = []
+def main():
+    tasks = []
 
-while True:
-    print("\n============================")
-    print("     TO-DO LIST MENU")
-    print("============================")
-    print("1. Add task")
-    print("2. View tasks")
-    print("3. Delete task")
-    print("4. Quit")
+    while True:
+        print("\n============================")
+        print("     TO-DO LIST MENU")
+        print("============================")
+        print("1. Add task")
+        print("2. View tasks")
+        print("3. Delete task")
+        print("4. Quit")
 
-    choice = input("Enter your choice (1-4): ")
+        choice = input("Enter your choice (1-4): ")
 
-    if choice == "1":
-        add_task(tasks)
-    elif choice == "2":
-        view_tasks(tasks)
-    elif choice == "3":
-        delete_task(tasks)
-    elif choice == "4":
-        print("Goodbye!")
-        break
-    else:
-        print("Invalid choice. Please try again.")
+        if choice == "1":
+            add_task(tasks)
+        elif choice == "2":
+            view_tasks(tasks)
+        elif choice == "3":
+            delete_task(tasks)
+        elif choice == "4":
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+
+main()

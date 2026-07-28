@@ -122,8 +122,10 @@ def display_students(students):
 
     for student in students:
         total = 0
+
         for score in student["scores"]:
             total += score
+
         average = round(total / len(student["scores"]), 2)
 
         scores = ", ".join(str(score) for score in student["scores"])
@@ -138,8 +140,10 @@ def calculate_average(students):
     for student in students:
         if student["id"] == student_id:
             total = 0
+
             for score in student["scores"]:
                 total += score
+
             average = round(total / len(student["scores"]), 2)
             print(f'{student["name"]}\'s average score: {average}')
             return
@@ -147,27 +151,30 @@ def calculate_average(students):
     print("Student ID not found.")
 
 
-students = []
+def main():
+    students = []
 
-while True:
-    print("\n================================")
-    print("   STUDENT RECORD SYSTEM MENU")
-    print("================================")
-    print("1. Add student")
-    print("2. Display all students")
-    print("3. Calculate average score")
-    print("4. Quit")
+    while True:
+        print("\n================================")
+        print("   STUDENT RECORD SYSTEM MENU")
+        print("================================")
+        print("1. Add student")
+        print("2. Display all students")
+        print("3. Calculate average score")
+        print("4. Quit")
 
-    choice = input("Enter your choice (1-4): ")
+        choice = input("Enter your choice (1-4): ")
 
-    if choice == "1":
-        add_student(students)
-    elif choice == "2":
-        display_students(students)
-    elif choice == "3":
-        calculate_average(students)
-    elif choice == "4":
-        print("Goodbye!")
-        break
-    else:
-        print("Invalid choice.")
+        if choice == "1":
+            add_student(students)
+        elif choice == "2":
+            display_students(students)
+        elif choice == "3":
+            calculate_average(students)
+        elif choice == "4":
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid choice.")
+
+main()
